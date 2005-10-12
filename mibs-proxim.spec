@@ -6,6 +6,7 @@ License:	Unknown
 Group:		Applications/System
 Source0:	http://keygen.proxim.com/support/tsunami/mp11/tmp225/MIBs.zip
 # Source0-md5:	9d1a3a8d0e18d1cddb5287b3e9bcd279
+BuildRequires:	unzip
 Requires:	net-snmp-mibs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
