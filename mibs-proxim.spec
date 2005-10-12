@@ -1,4 +1,5 @@
 Summary:	MIBs for Proxim Networking Hardware
+Summary(pl):	MIB-y dla sprzêtu sieciowego Proxim
 Name:		net-snmp-mibs-proxim
 Version:	2.2.5
 Release:	1
@@ -14,10 +15,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 MIBs for Proxim Networking Hardware.
 
+%description -l pl
+MIB-y dla sprzêtu sieciowego Proxim.
+
 %prep
 %setup -q -c
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
