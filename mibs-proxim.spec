@@ -12,6 +12,8 @@ Requires:	net-snmp-mibs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		mibdir	%{_datadir}/snmp/mibs
+
 %description
 MIBs for Proxim Networking Hardware.
 
@@ -23,11 +25,11 @@ MIB-y dla sprzętu sieciowego Proxim.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/snmp/mibs
+install -d $RPM_BUILD_ROOT%{mibdir}
 
 for file in *.mib; do
 	b=$(basename "$file" .mib)
-	install "$file" $RPM_BUILD_ROOT%{_datadir}/snmp/mibs/mib-${b}.txt
+	install "$file" $RPM_BUILD_ROOT%{mibdir}/mib-${b}.txt
 done
 
 %clean
@@ -35,4 +37,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_datadir}/snmp/mibs/*.*
+%{mibdir}/*.*
